@@ -12,7 +12,7 @@ const Navbar = () => {
 				Unoblog
 			</Link>
 
-			<div className={styles.menu}>
+			<div className={`${styles.menu} text-color`}>
 				<Toggle />
 
 				<Link href="/about" className={styles.link}>

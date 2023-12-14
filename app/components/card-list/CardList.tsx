@@ -19,7 +19,7 @@ const CardList = async ({ page, cat, limit }: CardListProps) => {
 
 	return (
 		<div className="my-8">
-			<h1 className="font-medium text-lg title-color my-4">Recent Posts</h1>
+			<h1 className="font-medium text-xl title-color my-4">Recent Posts</h1>
 			<div className={styles.posts}>
 				{posts.map((post) => (
 					<Card post={post} key={post.id} />

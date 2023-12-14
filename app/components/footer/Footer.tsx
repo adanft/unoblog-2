@@ -1,54 +1,55 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 
-import styles from "./Footer.module.css";
-import { getCategories } from "@/lib/data";
+import styles from './Footer.module.css';
+import { getCategories } from '@/lib/data';
 
 const Footer = async () => {
-    const categories = await getCategories();
+	const categories = await getCategories();
 
-    return (
-        <div className={styles.container}>
-            <div className={styles.info}>
-                <div className={styles.logo}>
-                    <Image src="/logo.png" alt="unoblog" width={50} height={50} style={{ borderRadius: '50%' }} />
-                    <h1 className={styles.logoText}>unoBlog</h1>
-                </div>
-                <p className={styles.desc}>
-                    Technology is a powerful tool, but, it is the people who build it and use it that truly drive innovation and progress.
-                </p>
-            </div>
-            <div className={styles.links}>
-                <div className={styles.list}>
-                    <span className={styles.listTitle}>Links</span>
-                    <Link href="/">Home</Link>
-                    <Link href="/about">About</Link>
-                    <Link href="/contact">Contact</Link>
-                </div>
-                <div className={styles.list}>
-                    <span className={styles.listTitle}>Categories</span>
-                    {
-                        categories.map((category) => (
-                            <Link
-                                href={`/blog?cat=${category.slug}&page=1&limit=4`}
-                                key={category.id}
-                            >
-                                {category.title}
-                            </Link>
-                        ))
-                    }
-                </div>
-                <div className={styles.list}>
-                    <span className={styles.listTitle}>Social</span>
-                    <Link href="/">Facebook</Link>
-                    <Link href="/">Instagram</Link>
-                    <Link href="/">Tiktok</Link>
-                    <Link href="/">Youtube</Link>
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div className={styles.container}>
+			<div className={styles.info}>
+				<div className={styles.logo}>
+					<Image src="/logo.png" alt="unoblog" width={50} height={50} />
+					<h1 className="font-medium text-xl text-color">Unoblog</h1>
+				</div>
+				<p className="text-color">
+					Empower your financial future with the potential of cryptocurrencies. Explore,
+					invest, and thrive in the digital frontier. 🚀 #CryptoRevolution
+				</p>
+			</div>
+			<div className={styles.links}>
+				<div className={styles.list}>
+					<span className="font-semibold title-color">Links</span>
+					<Link className="text-blue-500" href="/">
+						Home
+					</Link>
+					<Link className="text-blue-500" href="/about">
+						About
+					</Link>
+					<Link className="text-blue-500" href="/contact">
+						Contact
+					</Link>
+				</div>
+				<div className={styles.list}>
+					<span className="font-semibold title-color">Social media</span>
+					<Link className="text-orange-600 flex items-center gap-4" href="/">
+						<i className="nf nf-fa-instagram text-2xl"></i> <span>Instagram</span>
+					</Link>
+					<Link className="text-gray-500 flex items-center gap-4" href="/">
+						<i className="nf nf-md-music_note_outline text-2xl"></i>
+						<span>TikTok</span>
+					</Link>
+					<Link className="text-red-500 flex items-center gap-4" href="/">
+						<i className="nf nf-md-youtube text-2xl"></i>
+						<span>YouTube</span>
+					</Link>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Footer;

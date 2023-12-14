@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 				<AuthProvider>
 					<ThemeContextProvider>
 						<div className="bg-primary min-h-screen min-w-full">
-							<div className="container mx-auto px-4">
+							<div className="container mx-auto px-4 flex flex-col min-h-screen">
 								<Navbar />
 								{children}
 								<Footer />

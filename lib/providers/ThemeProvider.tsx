@@ -1,43 +1,41 @@
-"use client";
+'use client';
 import React, { useState, useContext, useEffect, type ReactNode } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import { Theme } from '../definitions';
 
 type ThemeContextProviderProps = {
-    children: ReactNode;
+	children: ReactNode;
 };
 
 const getInitialTheme = () => {
-    if (typeof window !== 'undefined') {
-        const storedTheme = localStorage.getItem('theme') as Theme;
-        return storedTheme || 'light';
-    }
-}
+	if (typeof window !== 'undefined') {
+		const storedTheme = localStorage.getItem('theme') as Theme;
+		return storedTheme || 'light';
+	}
+};
 const ThemeContextProvider: React.FC<ThemeContextProviderProps> = ({ children }) => {
-    const [mounted, setMounted] = useState(false);
-    const [theme, setTheme] = useState<Theme>(() => getInitialTheme()!);
+	const [mounted, setMounted] = useState(false);
+	const [theme, setTheme] = useState<Theme>(() => getInitialTheme()!);
 
-    const toggle = () => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
-    }
+	const toggle = () => {
+		setTheme(theme === 'light' ? 'dark' : 'light');
+	};
 
-    useEffect(() => {
-        localStorage.setItem('theme', theme);
-    }, [theme]);
+	useEffect(() => {
+		localStorage.setItem('theme', theme);
+	}, [theme]);
 
-    useEffect(() => {
-        setMounted(true);
-    }, []);
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 
-    if (!mounted) return null;
+	if (!mounted) return null;
 
-    return (
-        <ThemeContext.Provider value={{ theme, toggle }}>
-            <div className={theme}>
-                {children}
-            </div>
-        </ThemeContext.Provider>
-    );
+	return (
+		<ThemeContext.Provider value={{ theme, toggle }}>
+			<div className={theme}>{children}</div>
+		</ThemeContext.Provider>
+	);
 };
 
 export const useTheme = () => useContext(ThemeContext);

@@ -1,24 +1,22 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
-import { type ChangeEvent } from "react";
+import { type ChangeEvent } from 'react';
 
-function useForm<T>(
-  state: T
-): [T, (event: ChangeEvent<HTMLInputElement>) => void] {
-  const [values, setValues] = useState(state);
+function useForm<T>(state: T): [T, (event: ChangeEvent<HTMLInputElement>) => void] {
+	const [values, setValues] = useState(state);
 
-  function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
-    const { target } = event;
+	function handleInputChange(event: ChangeEvent<HTMLInputElement>): void {
+		const { target } = event;
 
-    setValues({
-      ...values,
-      [target.name]: target.value,
-    });
-  }
+		setValues({
+			...values,
+			[target.name]: target.value,
+		});
+	}
 
-  return [values, handleInputChange];
+	return [values, handleInputChange];
 }
 
 export default useForm;

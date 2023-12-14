@@ -1,0 +1,26 @@
+.formInput {
+	width: 100%;
+	border: 1px solid var(--border-color);
+	font-size: 16px;
+	line-height: 1;
+	padding: 0.3rem 0.6rem;
+}
+
+.formInput:focus + label {
+	color: var(--primary-color);
+}
+
+.formInputColor:focus + label {
+	color: var(--primary-color);
+}
+
+.formInput:focus-visible {
+	outline: none;
+}
+
+.formInput::placeholder {
+	color: var(--muted-color);
+	font-weight: 400;
+	font-size: 14px;
+	opacity: 0.5;
+}

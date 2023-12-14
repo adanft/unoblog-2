@@ -9,13 +9,13 @@ const CategoryList = async () => {
 
 	return (
 		<div className="my-8">
-			<h1 className="font-medium text-lg title-color my-4">Popular Categories</h1>
+			<h1 className="font-medium text-xl title-color my-4">Popular Categories</h1>
 			<div className={`${styles.categories}`}>
 				{categories.map((category) => (
 					<Link
 						href={`/blog?cat=${category.slug}&page=1&limit=4`}
 						key={category.id}
-						className={`${styles.category} font-medium color-white`}
+						className={`${styles.category} font-medium text-white`}
 						style={{ backgroundColor: category.color! }}
 					>
 						{category.slug}

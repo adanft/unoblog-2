@@ -21,12 +21,12 @@ const LoginPage = () => {
 					</div>
 					<p className="text-center text-color">Sign In with</p>
 					<button
-						className="px-8 py-4 font-medium bg-blue-500 rounded-full flex items-center gap-6"
+						className="px-8 py-4 font-medium bg-blue-500 rounded-full flex items-center gap-6 text-white"
 						onClick={() => signIn('google')}
 					>
 						<span>Google</span> <i className="nf nf-fa-google_plus text-2xl" />
 					</button>
-					<button className="px-8 py-4 font-medium bg-gray-700 rounded-full flex items-center gap-6">
+					<button className="px-8 py-4 font-medium bg-gray-700 rounded-full flex items-center gap-6 text-white">
 						<span>GitHub</span> <i className="nf nf-fa-github text-2xl" />
 					</button>
 				</div>

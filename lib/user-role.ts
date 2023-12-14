@@ -1,19 +1,19 @@
-import { DefaultSession } from "next-auth";
+import { DefaultSession } from 'next-auth';
 
 type UserType = {
-  email?: string | null;
-  image?: string | null;
-  name?: string | null;
+	email?: string | null;
+	image?: string | null;
+	name?: string | null;
 };
 
 function getUserRole(user: UserType): string {
-  let userRole = "simple";
+	let userRole = 'simple';
 
-  if (user.email == "moba.player.game@gmail.com") {
-    userRole = "admin";
-  }
+	if (user.email == 'moba.player.game@gmail.com') {
+		userRole = 'admin';
+	}
 
-  return userRole;
+	return userRole;
 }
 
 export default getUserRole;
