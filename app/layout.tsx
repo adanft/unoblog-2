@@ -13,8 +13,8 @@ const inter = Poppins({
 });
 
 export const metadata: Metadata = {
-	title: 'Unofy',
-	description: 'Most popular song in the world and news about them',
+	title: 'Unoblog',
+	description: 'Dive into the world of crypto with us. Stay informed. Stay ahead.',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
