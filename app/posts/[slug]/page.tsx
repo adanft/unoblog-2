@@ -117,7 +117,7 @@ const SinglePage = ({ params: { slug } }: SinglePageProps) => {
 				)}
 
 				<div>
-					{post?.comments && (
+					{post?.comments && post?.comments.length !== 0 && (
 						<ul className="box flex flex-col gap-6">
 							{post.comments.map((comment) => (
 								<li key={comment.id}>

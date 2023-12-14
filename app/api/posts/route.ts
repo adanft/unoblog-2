@@ -1,7 +1,6 @@
 import { db } from '@/lib/server/db';
 import { getServerAuthSession } from '@/lib/server/auth';
 import { PaginatedPostsResponse } from '@/lib/definitions';
-import { Post } from '@prisma/client';
 
 // GET POSTS
 export const GET = async (request: Request): Promise<Response> => {
@@ -73,17 +72,10 @@ export const POST = async (req: Request): Promise<Response> => {
 	try {
 		const body = await req.json();
 
-		const comments = await db.comment.create({
-			data: {
-				...body,
-				userEmail: session.user.email!,
-			},
-		});
-
 		const post = await db.post.create({
 			data: {
 				...body,
-				userId: session.user.email!,
+				userEmail: session.user.email!,
 			},
 		});
 
