@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
-      - run: |
+        run: |
         echo "Installing dependencies..."
         sleep 5s;
         echo "Dependencies installed"
